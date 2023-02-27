@@ -1,0 +1,89 @@
+.city-table-container {
+    margin: 20px;
+}
+
+.search-input {
+    margin-bottom: 10px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: bold;
+    text-align: left;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.table img {
+    max-width: 100%;
+    height: 50px;
+}
+
+.pagination {
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.pagination select {
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.pagination button {
+    border: none;
+    background-color: transparent;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.pagination .active button {
+    font-weight: bold;
+}
+
+.page-navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-navigation input {
+    margin-right: 10px;
+    width: 80px;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #6c757d;
+    outline: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.page-navigation button {
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.page-navigation button:hover {
+    background-color: #0069d9;
+}
+
+.page-navigation button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}

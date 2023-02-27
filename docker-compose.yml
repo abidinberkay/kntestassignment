@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+  knmysql:
+    #Comment out the following line if you are not using Apple M1 Silicon Processor
+    platform: linux/amd64
+    image: mysql:8
+    container_name: knmysql
+    restart: always
+    ports:
+      - '3307:3307'
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      - MYSQL_ROOT_PASSWORD=kntestpass
+      - MYSQL_PASSWORD=kntestpass
+      - MYSQL_USER=kntestuser
+      - DATABASE_HOST=knmysql
+      - MYSQL_DATABASE=knmysql
+      - MYSQL_ROOT_HOST=%
+      - LANG=C.UTF-8
+      - MYSQL_TCP_PORT=3307
+      - lower_case_table_names=1
+    volumes:
+      - mysqldbvolume:/var/lib/mysql1
+
+  knbackend:
+    container_name: knbackend
+    image: knbackend
+    build: ./knbackend
+    restart: always
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 15
+    ports:
+      - '8080:8080'
+    environment:
+      - MYSQL_ROOT_PASSWORD=kntestpass
+      - MYSQL_PASSWORD=kntestpass
+      - MYSQL_USER=kntestuser
+      - MYSQL_DATABASE=knmysql
+      - DATABASE_HOST=knmysql
+      - DATABASE_PORT=3307
+    depends_on:
+      - knmysql
+
+  knfrontend:
+    container_name: knfrontend
+    image: knfrontend
+    build: ./knfrontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - knbackend
+
+volumes:
+  mysqldbvolume:
+  cache:
+    driver: local
