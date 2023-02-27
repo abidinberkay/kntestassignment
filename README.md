@@ -1,4 +1,4 @@
-<h1 style="color:red;">Kuehne-Nagel test assignment</h1>
+<h1>Kuehne-Nagel test assignment</h1>
 <h2>Outline</h2>
 <h2>1-Prerequisites and Running</h2>
 <h3>1.1 Running with docker & docker-compose (recommended for almost zero effort)<h3>
