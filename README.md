@@ -1,12 +1,14 @@
-<h1 align="center">Dev Dictionary</h1>
+Kuehne-Nagel test assignment
 
-#Kuehne-Nagel test assignment
-##Outline
-###1-Prerequisites and Running
-####1.1 Running with docker & docker-compose (recommended for almost zero effort)
-####1.2 Running without docker
-###2-Testing ###
-###3-Extra Notes###
+Outline
+1-Prerequisites and Running
+
+1.1 Running with docker & docker-compose (recommended for almost zero effort)
+1.2 Running without docker
+
+2-Testing ###
+
+3-Extra Notes###
 
 ---
 ###1-Prerequisites
