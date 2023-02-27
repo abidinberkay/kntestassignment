@@ -1,4 +1,4 @@
-#Kuehne-Nagel test assignment#
+#Kuehne-Nagel test assignment
 ##Outline
 ###1-Prerequisites and Running
 ####1.1 Running with docker & docker-compose (recommended for almost zero effort)
