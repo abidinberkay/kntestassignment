@@ -1,17 +1,13 @@
-Kuehne-Nagel test assignment
-
-Outline
-1-Prerequisites and Running
-
-1.1 Running with docker & docker-compose (recommended for almost zero effort)
-1.2 Running without docker
-
-2-Testing ###
-
-3-Extra Notes###
+<h1>Kuehne-Nagel test assignment</h1>
+<h2>Outline</h2>
+<h2>1-Prerequisites and Running</h2>
+<h3>1.1 Running with docker & docker-compose (recommended for almost zero effort)<h3>
+<h3>1.2 Running without docker</h3>
+<h2>2-Testing</h2>
+<h2>3-Extra Notes</h2>
 
 ---
-###1-Prerequisites
+<h3>1-Prerequisites</h3>
 Firstly be sure that no application is running on ports :`3307`, `8080` and `3000`.
 
 **MySQL database** will work on: `3307`
@@ -20,13 +16,13 @@ Firstly be sure that no application is running on ports :`3307`, `8080` and `300
 
 **Frontend app** will work on: `3000`
 
-Install Docker & Docker-Compose (Docker):
+Install Docker & Docker-Compose (If you have already skip this step, go to 1.1):
 
 https://docs.docker.com/get-docker/
 
 https://docs.docker.com/compose/install/
 
-####1.1 Running with docker & docker-compose **(recommended for almost zero effort)**
+<h3>1.1 Running with docker & docker-compose **(recommended for almost zero effort)**</h3>
 
 **1-** When you install docker & docker-compose, go to project main folder where the docker-compose.yml is located.
 
@@ -41,7 +37,7 @@ You can go to `localhost:3000`. Here is the login page. You can login or registe
 **5-** You can see swagger/open-api UI to test backend with requests without frontend ui on
 http://localhost:8080/docs/swagger-ui/index.html
 
-####1.2 Running without docker
+<h3>1.2 Running without docker</h3>
 
 You can download and install MySQL and create db with following credentials:
 `jdbcUrl=jdbc:mysql://localhost:3307/knmysql
@@ -54,7 +50,7 @@ Run the frontend project from local (through IDE or `npm start` after building f
 
 ---
 
-###2-Testing ###
+<h2>2-Testing </h2>
 
 You can test the app through frontend (`localhost:3000`) or you can test the backend via swagger/open-api ui on
 http://localhost:8080/docs/swagger-ui/index.html
@@ -65,7 +61,7 @@ and then paste that token to the `authorization` field on top right corner as fo
 ![img.png](img.png)
 
 ---
-###3-Extra Notes ###
+<h2>3-Extra Notes</h2>
 System has 2 users by default:
 
 **1-** Username: **EDITOR** Password: **123456qwe** Role: **ROLE_ALLOW_EDIT**
