@@ -22,17 +22,18 @@ https://docs.docker.com/get-docker/
 
 https://docs.docker.com/compose/install/
 
-<h3>1.1 Running with docker & docker-compose **(recommended for almost zero effort)**</h3>
+<h3>1.1 Running with docker & docker-compose (recommended for almost zero effort)</h3>
 
 **1-** When you install docker & docker-compose, go to project main folder where the docker-compose.yml is located.
 
 **2-** Run the command ```docker-compose up -d```.
 
-**3-** You should wait around 2-3 minutes so that the projects will install required dependencies
+**3-** You should wait around 2-3 minutes so that the projects will install the required dependencies
 and build the project and then will be ready to run.
 
-**4-** When project are ready (3 containers: `knmysql`, `knbackend` and `knfrontend` are working correctly)
+**4-** When the projects are ready (3 containers: `knmysql`, `knbackend` and `knfrontend` are working correctly)
 You can go to `localhost:3000`. Here is the login page. You can login or register new user to sign in.
+(knmysql takes abit time to be ready so that knbackend will fail couple of times due to waiting for knmysql setup, all of them will be ready in 2-3 minutes depending on internet, computer etc. connection speed.)
 
 **5-** You can see swagger/open-api UI to test backend with requests without frontend ui on
 http://localhost:8080/docs/swagger-ui/index.html
@@ -56,8 +57,8 @@ You can test the app through frontend (`localhost:3000`) or you can test the bac
 http://localhost:8080/docs/swagger-ui/index.html
 
 In order to be able to see pages you need to login first (or register if you are not logged in).
-For swagger-ui testers: You need to login and get the jwtToken response first 
-and then paste that token to the `authorization` field on top right corner as follows:
+For swagger-ui testers: You need to login and get the jwtToken response first (by calling "/authenticate" endpoint) 
+and then paste the received jwtToken to the `Authorization` field on top right corner as follows:
 ![img.png](img.png)
 
 ---
