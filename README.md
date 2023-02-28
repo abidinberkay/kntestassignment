@@ -85,3 +85,25 @@ and comment/uncomment desired behaviours.
 "Sorting" was not included in the task, but it works on backend due to 
 default behaviour of "Pageable" object. Sample request is:
 ![img_1.png](img_1.png)
+  
+For updating city, `@PreAuthorized` annotation is used for method level authorization (i.e. `@EnableGlobalMethodSecurity`). Instead of that, this can also be used that we can specify it explicitly on `SecurityConfiguration.java` class on backend, here is the corresponding method:
+```  
+  @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf()
+                .disable()
+                .authorizeRequests()
+                .antMatchers("/auth/**", "/docs/**")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+        http.cors();
+
+    }
+```
+  
+We can add here like `.antMatchers("/city")` and `hasAuthority("ROLE_ALLOW_EDIT")` **or** `hasRole("ALLOW_EDIT")` to enable these authorities to be able reach the endpoint.
